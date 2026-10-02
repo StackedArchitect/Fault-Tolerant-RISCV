@@ -30,7 +30,7 @@ module error_injection_enhanced(
             
             if (inject_enable) begin
                 case (error_type)
-                    2'b01: begin // Single bit error
+                    2'b01: begin // Single bit error - flips selected bit
                         if (use_encoded && error_position < 68) begin
                             error_mask_encoded[error_position] <= 1'b1;
                         end else if (!use_encoded && error_position < 32) begin
